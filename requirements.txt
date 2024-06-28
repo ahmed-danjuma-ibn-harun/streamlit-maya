@@ -2,4 +2,5 @@ diffusers==0.29.2
 Pillow==9.4.0
 streamlit==1.34.0
 torch==2.3.1
+transformers
 torchvision==0.18.1
