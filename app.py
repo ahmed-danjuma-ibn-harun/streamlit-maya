@@ -13,6 +13,9 @@ MODEL_OPTIONS = [
     "CompVis/stable-diffusion-v1-4",
 ]
 
+# Determine if CUDA is available
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 def add_text_to_image(
     images,
@@ -56,10 +59,10 @@ def diff_images(model_name, num_images, prompt, num_inference_steps, text):
     pipe = StableDiffusionPipeline.from_pretrained(
         model_name, torch_dtype=torch.float16
     )
-    pipe.to("cuda")
+    pipe.to(device)
     prompt = [prompt] * num_images
 
-    with autocast("cuda"):
+    with autocast(device):
         images = pipe(prompt, num_inference_steps=num_inference_steps).images
     imgs = add_text_to_image(
         images,
