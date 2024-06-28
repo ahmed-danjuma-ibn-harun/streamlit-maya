@@ -57,8 +57,8 @@ def add_text_to_image(
 # Function to generate images
 def diff_images(model_name, num_images, prompt, num_inference_steps, text):
     pipe = StableDiffusionPipeline.from_pretrained(
-        model_name, torch_dtype=torch.float16
-    )
+        model_name)#, torch_dtype=torch.float16
+    
     pipe.to(device)
     prompt = [prompt] * num_images
 
