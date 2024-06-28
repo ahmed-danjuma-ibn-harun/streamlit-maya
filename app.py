@@ -4,7 +4,6 @@ import torchvision
 import torchvision.transforms.functional as F
 from diffusers import StableDiffusionPipeline
 from PIL import ImageDraw, ImageFont
-from torch import autocast
 from torchvision.utils import make_grid
 
 # List of available models
@@ -62,8 +61,7 @@ def diff_images(model_name, num_images, prompt, num_inference_steps, text):
     pipe.to(device)
     prompt = [prompt] * num_images
 
-    with autocast(device):
-        images = pipe(prompt, num_inference_steps=num_inference_steps).images
+    images = pipe(prompt, num_inference_steps=num_inference_steps).images
     imgs = add_text_to_image(
         images,
         text,
