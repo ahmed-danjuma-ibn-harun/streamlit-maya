@@ -15,7 +15,7 @@ MODEL_OPTIONS = [
 
 # Determine if CUDA is available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+print("DEVICE                   ", device)
 
 def add_text_to_image(
     images,
