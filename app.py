@@ -1,3 +1,23 @@
+import subprocess
+
+# Define the command as a list of strings
+command = [
+    "pip3",
+    "install",
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "--index-url",
+    "https://download.pytorch.org/whl/cu121"
+]
+
+# Run the command
+result = subprocess.run(command, capture_output=True, text=True)
+
+# Print the output and errors (if any)
+print("stdout :", result.stdout)
+print("stderr :", result.stderr)
+
 import streamlit as st
 import torch
 import torchvision
