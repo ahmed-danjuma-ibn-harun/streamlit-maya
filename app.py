@@ -15,8 +15,7 @@ command = [
 result = subprocess.run(command, capture_output=True, text=True)
 
 # Print the output and errors (if any)
-print("stdout :", result.stdout)
-print("stderr :", result.stderr)
+print("stdout :", result)
 
 import streamlit as st
 import torch
