@@ -1,4 +1,6 @@
-torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+torch --index-url https://download.pytorch.org/whl/cu121
+torchvision --index-url https://download.pytorch.org/whl/cu121
+torchaudio --index-url https://download.pytorch.org/whl/cu121
 accelerate==0.31.0
 diffusers==0.29.2
 huggingface-hub==0.23.4
