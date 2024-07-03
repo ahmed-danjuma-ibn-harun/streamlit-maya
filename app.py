@@ -2,7 +2,7 @@ import subprocess
 
 # Define the command as a list of strings
 command = [
-    "pip3",
+    "pip",
     "install",
     "torch",
     "torchvision",
