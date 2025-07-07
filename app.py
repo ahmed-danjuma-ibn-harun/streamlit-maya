@@ -27,7 +27,7 @@ from torchvision.utils import make_grid
 
 # List of available models
 MODEL_OPTIONS = [
-    "maya_model_v1",
+    "Ahmed-ibn-Harun/maya_model_v1",
     "CompVis/stable-diffusion-v1-4",
 ]
 
