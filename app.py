@@ -21,7 +21,7 @@ import streamlit as st
 import torch
 import torchvision
 import torchvision.transforms.functional as F
-from diffusers import StableDiffusionPipeline
+from diffusers import AutoPipelineForText2Image
 from PIL import ImageDraw, ImageFont
 from torchvision.utils import make_grid
 
