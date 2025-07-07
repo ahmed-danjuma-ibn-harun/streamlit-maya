@@ -74,9 +74,10 @@ def add_text_to_image(
 
 # Function to generate images
 def diff_images(model_name, num_images, prompt, num_inference_steps, text):
-    pipe = StableDiffusionPipeline.from_pretrained(
-        model_name)#, torch_dtype=torch.float16
-    
+    pipe = AutoPipelineForText2Image.from_pretrained(
+        model_name, torch_dtype=torch.float16
+    )
+    pipe.load_lora_weights(model_name, weight_name="pytorch_lora_weights.safetensors")
     pipe.to(device)
     prompt = [prompt] * num_images
 
